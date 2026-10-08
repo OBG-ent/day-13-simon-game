@@ -1,0 +1,183 @@
+/* Simon Says — neon arcade styling. */
+
+:root {
+  --bg: #0d0b1a;
+  --card: #16122b;
+  --text: #f4f1fb;
+  --muted: #a9a3c4;
+  --accent: #ffd166;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  width: min(28rem, 100%);
+  text-align: center;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.sub {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  background: #100d22;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.stat .label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stat .value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* The four pads */
+.board {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  max-width: 20rem;
+  margin: 0 auto 1.25rem;
+}
+
+.pad {
+  aspect-ratio: 1.6 / 1;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+.pad:hover {
+  opacity: 0.8;
+}
+
+.pad-green {
+  background: #06d6a0;
+}
+
+.pad-red {
+  background: #ef476f;
+}
+
+.pad-yellow {
+  background: #ffd166;
+}
+
+.pad-blue {
+  background: #118ab2;
+}
+
+/* Lit-up state — toggled from TypeScript. */
+.pad.active {
+  opacity: 1;
+  transform: scale(1.04);
+  box-shadow: 0 0 2rem currentColor;
+}
+
+.pad-green.active {
+  color: #06d6a0;
+}
+
+.pad-red.active {
+  color: #ef476f;
+}
+
+.pad-yellow.active {
+  color: #ffd166;
+}
+
+.pad-blue.active {
+  color: #118ab2;
+}
+
+.status {
+  min-height: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+.status strong {
+  color: var(--accent);
+}
+
+.start {
+  background: var(--accent);
+  color: #0d0b1a;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.start:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.start:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+kbd {
+  background: #100d22;
+  border: 1px solid #2e2850;
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.75rem;
+}
+
+footer p {
+  font-size: 0.75rem;
+  color: var(--muted);
+}

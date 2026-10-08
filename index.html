@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simon Says — TypeScript Edition</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>🎮 Simon Says</h1>
+    <p class="sub">Watch the sequence, then repeat it. Each round adds one step — how far can you go?</p>
+
+    <section class="scoreboard">
+      <div class="stat">
+        <span class="label">Round</span>
+        <span id="round" class="value">–</span>
+      </div>
+      <div class="stat">
+        <span class="label">Best</span>
+        <span id="best" class="value">0</span>
+      </div>
+    </section>
+
+    <section class="board" aria-label="Simon pads">
+      <button id="pad-green" class="pad pad-green" aria-label="Green pad">G</button>
+      <button id="pad-red" class="pad pad-red" aria-label="Red pad">R</button>
+      <button id="pad-yellow" class="pad pad-yellow" aria-label="Yellow pad">Y</button>
+      <button id="pad-blue" class="pad pad-blue" aria-label="Blue pad">B</button>
+    </section>
+
+    <p id="status" class="status">Press <strong>Start</strong> and watch closely…</p>
+
+    <button id="start-btn" class="start">▶ Start game</button>
+
+    <p class="hint">Tip: you can also play with your keyboard — <kbd>G</kbd> <kbd>R</kbd> <kbd>Y</kbd> <kbd>B</kbd></p>
+
+    <footer>
+      <p>Day 13 · featured build of my daily coding journey · written in TypeScript</p>
+    </footer>
+  </main>
+  <!-- Compiled output of src/main.ts — rebuild with: npx tsc -->
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>
